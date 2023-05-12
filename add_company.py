@@ -39,13 +39,7 @@ def create_new_line(category,
                     alts_links
                     ):
     
-    return '{}|{}|{}|{}|{}|\n'.format(
-                    category.strip(),
-                    f'[{name.strip()}]({link.strip()})',
-                    description.strip(),
-                    f'<a href={gh_link.strip()}><img src="{create_shield_link(gh_link)}" width=150/></a>',
-                    create_alternatives_md(alts_names, alts_links)
-                )
+    return f'{category.strip()}|[{name.strip()}]({link.strip()})|{description.strip()}|<a href={gh_link.strip()}><img src="{create_shield_link(gh_link)}" width=150/></a>|{create_alternatives_md(alts_names, alts_links)}|\n'
 
 
 def add_new_company(category,
@@ -93,7 +87,7 @@ def add_new_company(category,
 
 if __name__ == '__main__':
     count = 0
-    args = dict()
+    args = {}
 
     while True:
         if count == 0:
